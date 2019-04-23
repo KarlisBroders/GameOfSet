@@ -56,7 +56,7 @@ class Set {
     
     func selectCard(card: Card) {
         if selectedCards.contains(card) {
-            selectedCards.remove(at: selectedCards.index(of: card)!)
+            selectedCards.remove(at: selectedCards.firstIndex(of: card)!)
             //TODO: punish player for deselecting
 //            print("I punish you")
         } else {
@@ -73,7 +73,7 @@ class Set {
                     points = points + (27-cardsOnTable.count)/3
                     
                     for index in 0...2 {
-                        if let indexOfSelectedCard = cardsOnTable.index(of: selectedCards[index]) {
+                        if let indexOfSelectedCard = cardsOnTable.firstIndex(of: selectedCards[index]) {
                             cardsOnTable.remove(at: indexOfSelectedCard)
                         }
                     }
